@@ -1,10 +1,33 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Hello</title>
+    <title>Sub-Hub</title>
+    <link rel="stylesheet" href="./index.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<a>hello World!</a>
+    <h1>Welcome to Sub-Hub</h1>
+    
+    <h2>Create an Account</h2>
+    <form action="/create_account" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        
+        <input type="submit" value="Create Account">
+    </form>
+    
+    <h2>Log In</h2>
+    <form action="/login" method="post">
+        <label for="login_username">Username:</label>
+        <input type="text" id="login_username" name="login_username" required><br>
+        
+        <label for="login_password">Password:</label>
+        <input type="password" id="login_password" name="login_password" required><br>
+        
+        <input type="submit" value="Log In">
+    </form>
 </body>
 </html>
