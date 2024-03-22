@@ -1,81 +1,77 @@
 * {
     box-sizing: border-box;
+   
+}
+
+html {
+    font-size: 16px;
+
 
 }
 
-
-
-
-body, html {
-    font-size: 16px;
+body {
+    background-color: #212121;
     margin: 0;
     padding: 0;
-    height: 100%;
-
-    font-family: Arial, sans-serif;
 }
 
-
-/* header {
-   display: flex;
-   justify-content: center;
-   background-color: #212121;
-   color: white;
-    
-
-
-    
-} */
-
 header {
-    background-color: #333; /* Dark background color */
-    color: #fff; /* Text color */
-    text-align: center; /* Center align text */
-    padding: 20px; /* Add padding for better readability */
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    width: 100%;
+    height: auto;
    
-    width: 100%; /* Full width */
-    top: 0; /* Stick to the top */
+
 }
 
 h1 {
-    font-size: 48px;
+    color: wheat;
 }
 
 
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: first baseline;
+    
+    position: relative;
+    width: 100%;
+    min-height: 53rem;
+    
+}
+
+
+.intro {
+    
+    max-width: 80%;
+    margin-left: 20rem;
+    
+    
+
+}
 
 article {
-    
-    text-align: center; /* Center align text */
-    font-size: 18px; /* Increase font size for better readability */
-    line-height: 1.6; /* Increase line height for better readability */
-    margin-top: 100px; /* Add space below the header */
+    text-align: center;
+    font-size: xx-large;
+    color: wheat;
+    line-height: 1.5;
+    width: 80%; /* Set the width to 80% of the parent container */
+    margin: 0 auto; /* Center the article horizontally */
 }
+
 
 .account {
-    position: relative;
-    padding: 20px;
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: center; /* Center items vertically */
 }
-
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #212121;
-    color: #ffffff;
-}
-
-.account.container {
-    display: flex; /* Use flexbox to align elements */
-    justify-content: center; /* Center align items horizontally */
-    align-items: center; /* Center align items vertically */
-    margin-top: 20px; /* Add space between main content and forms */
-}
-
-
 
 .signup,
 .login {
+    
+    color: wheat;
     width: 250px; /* Set width for the forms */
     padding: 10px; /* Add padding for better spacing */
     margin-right: 20px; /* Add space between signup and login forms */
@@ -85,7 +81,7 @@ article {
 .signup form,
 .login form {
     display: flex; /* Use flexbox to align inputs horizontally */
-    flex-direction: column; /* Arrange inputs vertically */
+    flex-direction: row; /* Arrange inputs vertically */
 }
 
 
@@ -93,20 +89,12 @@ article {
 
 .signup input,
 .login input {
-    margin-bottom: 10px; /* Add spacing between inputs */
-    padding: 8px; /* Add padding for better appearance */
+    
+    
     font-size: 14px; /* Reduce font size for smaller inputs */
     width: 100%; /* Make inputs full width */
 }
 
-
-
-
-img {
-    max-width: 40%;
-
-
-}
 
 
 
@@ -121,7 +109,7 @@ form {
 
 form input,
 form input[type="submit"] {
-    margin-bottom: 10px; /* Adjust as needed */
+    
     width: 100%; /* Ensure inputs take full width */
 }
 
@@ -157,7 +145,7 @@ section > div {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px; /* Add some margin between sections */
+    
 }
 
 section > div img {

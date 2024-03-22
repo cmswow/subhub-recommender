@@ -1,92 +1,142 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Sub-Hub</title>
     <link rel="stylesheet" href="./index.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
 <body>
+
+    <header>
+        <h1> Sub-Hub<!--Welcome to Sub-Hub --></h1>
+    </header>
+
+
+    <main>
+
+        <section class="intro">
+
+          
+
+            <article>
+                Welcome to Sub-Hub!
+
+                Sub-Hub is your gateway to personalized content discovery on
+                YouTube. With our platform, you can explore a variety of
+                features designed to enhance your viewing experience:
+
+                Explore Your Subscribed Channels: Easily access and navigate through
+                the list of channels you're subscribed to on YouTube. Stay up-to-date
+                with the latest uploads and updates from your favorite content creators.
+
+                Discover Popular Videos: Dive into a curated selection of popular
+                videos among the subscribed videos of other users. Find trending content,
+                discover new creators, and stay connected with the latest viral sensations.
+
+                Follow and Explore: Follow your favorite creators and friends to see what
+                they're watching and subscribing to. With Sub-Hub, you can easily explore their
+                subscription lists, discover new channels, and broaden your content horizons.
+
+                Start exploring the world of online content like never before with Sub-Hub. Happy SUBing!
+            </article>
+        </section>
+
+
+        <!-- 계정 생성과 로그인을 위한 섹션 -->
+        <section class="account container">
+
+
+            <!-- Add buttons for creating an account and logging in -->
+            <button id="showSignupForm">Create Account</button>
+            <button id="showLoginForm">Log In</button>
+
+            <!-- Hide the signup and login forms initially -->
+            <div class="signup" style="display: none;">
+                <!-- Signup form content -->
+
+                    <h2>계정 생성<!--Create an Account --></h2>
+                    <form action="/create_account" method="post">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required><br>
     
-    <header><h1> Sub-Hub<!--Welcome to Sub-Hub --></h1></header>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required><br>
+    
+                        <input type="submit" value="Create Account">
+                    </form>
 
-    <article>
-        Welcome to Sub-Hub!
-        
-        Sub-Hub is your gateway to personalized content discovery on
-         YouTube. With our platform, you can explore a variety of 
-         features designed to enhance your viewing experience:
-        
-        Explore Your Subscribed Channels: Easily access and navigate through 
-        the list of channels you're subscribed to on YouTube. Stay up-to-date 
-        with the latest uploads and updates from your favorite content creators.
-        
-        Discover Popular Videos: Dive into a curated selection of popular 
-        videos among the subscribed videos of other users. Find trending content, 
-        discover new creators, and stay connected with the latest viral sensations.
-        
-        Follow and Explore: Follow your favorite creators and friends to see what 
-        they're watching and subscribing to. With Sub-Hub, you can easily explore their 
-        subscription lists, discover new channels, and broaden your content horizons.
-        
-        Start exploring the world of online content like never before with Sub-Hub. Happy viewing! </article>
+            </div>
+            
+  <!-- 로그인 폼 -->
+            <div class="login" style="display: none;">
+                <!-- Login form content -->
 
+                <h2>로그인</h2>
+                <form id="loginForm" action="/login" method="post" onsubmit="login(event)">
+                    <label for="login_username">Username:</label>
+                    <input type="text" id="login_username" name="login_username" required><br>
 
- <!-- 계정 생성과 로그인을 위한 섹션 -->
-     <section class="account container">
+                    <label for="login_password">Password:</label>
+                    <input type="password" id="login_password" name="login_password" required><br>
 
-        <div class="signup">
-        
-        
-        <h2>계정 생성<!--Create an Account --></h2>
-        <form action="/create_account" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
-            
-            <input type="submit" value="Create Account">
-        </form>
-        </div>
-        
- <!-- 로그인 폼 -->
-        <div class="login">
-        <h2>로그인</h2>
-        <form id="loginForm" action="/login" method="post" onsubmit="login(event)">
-            <label for="login_username">Username:</label>
-            <input type="text" id="login_username" name="login_username" required><br>
-            
-            <label for="login_password">Password:</label>
-            <input type="password" id="login_password" name="login_password" required><br>
-            
-            <input type="submit" value="Log In">
-        </form>
-        </div>
-    </section>
+                    <input type="submit" value="Log In">
+                </form>
+
+            </div>
 
 
-<!-- Javascript function to handle login event and redirect to next page -->
+          
+            <div class="login">
+                
+            </div>
+        </section>
 
-    <script>
-        function login(event) {
-            event.preventDefault(); // Prevent the default form submission behavior
-            
-            // Get the username and password from the form
-            const username = document.getElementById("login_username").value;
-            const password = document.getElementById("login_password").value;
-            
-            // Check if the login is successful (dummy check)
-            const successfulLogin = true; // Replace with your actual login logic
-            
-            if (successfulLogin) {
-                // Redirect the user to the second page
-                window.location.href = "second_page.html";
-            } else {
-                // Handle unsuccessful login (e.g., display error message)
-                alert("Login failed. Please try again.");
+
+        <!-- Javascript function to handle login event and redirect to next page -->
+
+        <script>
+            function login(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+
+                // Get the username and password from the form
+                const username = document.getElementById("login_username").value;
+                const password = document.getElementById("login_password").value;
+
+                // Check if the login is successful (dummy check)
+                const successfulLogin = true; // Replace with your actual login logic
+
+                if (successfulLogin) {
+                    // Redirect the user to the second page
+                    window.location.href = "second_page.html";
+                } else {
+                    // Handle unsuccessful login (e.g., display error message)
+                    alert("Login failed. Please try again.");
+                }
             }
-        }
         </script>
+        <script>
+            // JavaScript to toggle the visibility of the signup and login forms
+            document.getElementById("showSignupForm").addEventListener("click", function () {
+                // Toggle the display property of the signup form
+                var signupForm = document.querySelector(".signup");
+                signupForm.style.display = signupForm.style.display === "none" ? "block" : "none";
 
+                // Hide the login form when showing the signup form
+                document.querySelector(".login").style.display = "none";
+            });
+
+            document.getElementById("showLoginForm").addEventListener("click", function () {
+                // Toggle the display property of the login form
+                var loginForm = document.querySelector(".login");
+                loginForm.style.display = loginForm.style.display === "none" ? "block" : "none";
+
+                // Hide the signup form when showing the login form
+                document.querySelector(".signup").style.display = "none";
+            });
+        </script>
+    </main>
 </body>
+
 </html>
